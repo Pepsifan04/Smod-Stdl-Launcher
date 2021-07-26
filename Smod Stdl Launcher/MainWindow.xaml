@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="Smod Stdl Launcher" Height="450" Width="500" Background="#FF171721">
 
-        <StackPanel Margin="10" x:Name="Buttons">
-        <Button Content="Button"/>
-    </StackPanel>
+        <StackPanel Margin="10" x:Name="Buttons"/>
 
 </Window>

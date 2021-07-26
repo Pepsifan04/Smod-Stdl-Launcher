@@ -13,8 +13,8 @@ namespace Smod_Stdl_Launcher
     /// </summary>
     public partial class MainWindow : Window
     {
-        //string modDir = "./mods/";
-        string modDir = "K:/Steam/steamapps/sourcemods/SMOD Standalone/mods/";
+        string modDir = "./mods/";
+        //string modDir = "K:/Steam/steamapps/sourcemods/SMOD Standalone/mods/";
         string launchParamsFile = "./launch.commands";
         string launchParams = "";
 
