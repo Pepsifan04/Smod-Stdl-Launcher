@@ -14,7 +14,7 @@ namespace Smod_Stdl_Launcher
     public partial class MainWindow : Window
     {
         string modDir = "./mods/";
-        //string modDir = "K:/Steam/steamapps/sourcemods/SMOD Standalone/mods/";
+       // string modDir = "K:/Steam/steamapps/sourcemods/SMOD Standalone/mods/";
         string launchParamsFile = "./launch.commands";
         string launchParams = "";
 
@@ -41,17 +41,6 @@ namespace Smod_Stdl_Launcher
                     Button newBtn = new Button();
                     string modName = dir.Name;
                     newBtn.Content = modName;
-                    newBtn.BorderThickness = new Thickness(0, 0, 0, 0);
-                    newBtn.Background = new SolidColorBrush(Color.FromArgb(0,21, 21, 21));
-                    newBtn.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
-                    newBtn.MouseEnter += (sender, e) =>
-                    {
-  
-                    };
-                    newBtn.MouseLeave += (sender, e) =>
-                    {
-
-                    };
                     newBtn.Click += (sender, e) =>
                     {
                         Process.Start("./hl2.exe", "-game mods/" + modName + " " + launchParams);
