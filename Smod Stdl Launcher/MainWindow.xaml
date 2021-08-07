@@ -9,11 +9,14 @@
     
     <Window.Resources>
         <Style TargetType="Button">
+            
+            <Setter Property="Width" Value="200"/>
             <Setter Property="Background" Value="#FF151515"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="0,0,0,0"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="FontFamily" Value="Arial"/>
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -30,8 +33,10 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <StackPanel x:Name="Buttons" />
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+        <StackPanel x:Name="Buttons" >
+            <TextBox Text="" Name="launchParamsTextBox" TextWrapping="NoWrap" TextChanged="updateLaunchParams"/>
+        </StackPanel>
     </ScrollViewer>
 
 </Window>

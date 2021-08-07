@@ -3,7 +3,8 @@ using System.IO;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
+using System.Text;
+using System;
 
 
 namespace Smod_Stdl_Launcher
@@ -14,11 +15,12 @@ namespace Smod_Stdl_Launcher
     public partial class MainWindow : Window
     {
         string modDir = "./mods/";
-       // string modDir = "K:/Steam/steamapps/sourcemods/SMOD Standalone/mods/";
+        //string modDir = "K:/Steam/steamapps/sourcemods/SMOD Standalone/mods/";
         string launchParamsFile = "./launch.commands";
         string launchParams = "";
+        
 
-        public void getLaunchParams()
+        private void getLaunchParams()
         {
             if (File.Exists(launchParamsFile))
             {
@@ -26,12 +28,24 @@ namespace Smod_Stdl_Launcher
             }
         }
 
-        public void getMods()
+        private void updateTextBox()
+        {
+            launchParamsTextBox.Text = launchParams;
+        }
+
+        public void updateLaunchParams(object sender, TextChangedEventArgs args)
+        {
+            string newParams = launchParamsTextBox.Text;
+            launchParams = newParams;
+            File.WriteAllText(launchParamsFile, newParams);
+        }
+
+        private void getMods()
         {
 
             if (Directory.Exists(modDir))
             {
-                
+
                 DirectoryInfo di = new DirectoryInfo(modDir);
                 DirectoryInfo[] directories = di.GetDirectories("*", SearchOption.TopDirectoryOnly);
 
@@ -54,9 +68,11 @@ namespace Smod_Stdl_Launcher
         }
         public MainWindow()
         {
-            InitializeComponent();
             getLaunchParams();
+            InitializeComponent();
+            updateTextBox();
             getMods();
+            
         }
     }
 }
