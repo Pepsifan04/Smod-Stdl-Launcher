@@ -57,7 +57,7 @@ namespace Smod_Stdl_Launcher
                     newBtn.Content = modName;
                     newBtn.Click += (sender, e) =>
                     {
-                        Process.Start("./hl2.exe", "-game mods/" + modName + " " + launchParams);
+                        Process.Start("./hl2.exe", "-game \"mods/" + modName + "\" " + launchParams);
                     };
 
 

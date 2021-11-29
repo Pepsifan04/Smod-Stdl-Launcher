@@ -12,4 +12,12 @@
 	<DelaySign>false</DelaySign>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\btnBg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\btnBg.png" />
+  </ItemGroup>
+
 </Project>
